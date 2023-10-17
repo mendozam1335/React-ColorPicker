@@ -9,9 +9,8 @@ const App = () => {
 
   return (
     <main>
-      <section className="container">
-        <Form setColorList={setColorList} toast={toast} />
-      </section>
+      <Form setColorList={setColorList} toast={toast} />
+
       <ColorList colorList={colorList} toast={toast} />
 
       <ToastContainer position="top-center" />

@@ -12,7 +12,7 @@ const SingleColor = ({ color, index, toast }) => {
     }
   }
   return (
-    <div
+    <article
       onClick={() => {
         copyToClipboard(color.hex);
       }}
@@ -21,7 +21,7 @@ const SingleColor = ({ color, index, toast }) => {
     >
       <p className="percent-value">{color.weight}%</p>
       <p className="color-value">#{color.hex}</p>
-    </div>
+    </article>
   );
 };
 

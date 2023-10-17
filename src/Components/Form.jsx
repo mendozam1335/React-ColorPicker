@@ -23,9 +23,9 @@ const Form = ({ setColorList, toast }) => {
     setColorList(list);
   };
   return (
-    <div>
+    <section className="container">
+      <h4>Color Generator</h4>
       <form className="color-form" onSubmit={handleSubmit}>
-        <h4>Color Generator</h4>
         <input
           type="color"
           name="colorPicker"
@@ -44,7 +44,7 @@ const Form = ({ setColorList, toast }) => {
           Submit
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 
