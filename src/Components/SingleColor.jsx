@@ -1,24 +1,25 @@
 import React from "react";
 
 const SingleColor = ({ color, index, toast }) => {
-  async function copyToClipboard(text) {
+  const { hex, weight } = color;
+  async function copyToClipboard() {
     try {
-      await navigator.clipboard.writeText(text);
-      toast.success("Copied to clipboard");
+      await navigator.clipboard.writeText(`#${hex}`);
+      toast.success("Color Copied to Clipboard");
     } catch (error) {
-      toast.error("something went wrong");
+      toast.error("Failed to Copy!");
     }
   }
   return (
     <article
       onClick={() => {
-        copyToClipboard(color.hex);
+        copyToClipboard();
       }}
       className={index > 10 ? "color-light color" : "color"}
-      style={{ backgroundColor: `#${color.hex}` }}
+      style={{ backgroundColor: `#${hex}` }}
     >
-      <p className="percent-value">{color.weight}%</p>
-      <p className="color-value">#{color.hex}</p>
+      <p className="percent-value">{weight}%</p>
+      <p className="color-value">#{hex}</p>
     </article>
   );
 };
