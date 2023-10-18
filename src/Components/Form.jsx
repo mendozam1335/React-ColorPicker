@@ -13,14 +13,12 @@ const Form = ({ setColorList, toast }) => {
     try {
       const list = new Values(color).all(10);
       toast.success("Success");
+      setColorList(list);
     } catch (error) {
       console.log(error);
       toast.error("Need a full color");
       return;
     }
-
-    console.log(list);
-    setColorList(list);
   };
   return (
     <section className="container">
