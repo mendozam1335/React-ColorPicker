@@ -4,10 +4,8 @@ const SingleColor = ({ color, index, toast }) => {
   async function copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      console.log("Text copied to clipboard");
       toast.success("Copied to clipboard");
     } catch (error) {
-      console.error("Failed to copy text: ", error);
       toast.error("something went wrong");
     }
   }

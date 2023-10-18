@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Values from "values.js";
 
 const Form = ({ setColorList, toast }) => {
-  const [color, setColor] = useState("#FF0000");
+  const [color, setColor] = useState("");
 
   const handleChange = (e) => {
     setColor(e.target.value);
@@ -24,21 +24,14 @@ const Form = ({ setColorList, toast }) => {
     <section className="container">
       <h4>Color Generator</h4>
       <form className="color-form" onSubmit={handleSubmit}>
-        <input
-          type="color"
-          name="colorPicker"
-          id="colorPicker"
-          value={color}
-          onChange={handleChange}
-        />
+        <input type="color" value={color} onChange={handleChange} />
         <input
           type="text"
-          name="colorText"
-          id="colorText"
           value={color}
           onChange={handleChange}
+          placeholder="#b816bb"
         />
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" style={{ background: color }}>
           Submit
         </button>
       </form>
